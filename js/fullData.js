@@ -43,7 +43,8 @@ const displayAllCategoryData = (pets) =>{
               <button onclick="lodeLikeData('${pet.petId}')"  class="btn px-4 py-2 text-cyan-700 bg-gray-200 hover:bg-gray-300">
               <span class="w-7"><i class="fa-regular fa-thumbs-up"></i></span>
               </button>
-              <button class="btn  px-4 py-2 text-cyan-700 bg-gray-200 hover:bg-gray-300">Adopt</button>
+
+              <button onclick="openModal()" class="btn  px-4 py-2 text-cyan-700 bg-gray-200 hover:bg-gray-300">Adopt</button>
               <button onclick="lodeDetail('${pet.petId}')"  class="btn  px-4 py-2 text-cyan-700 bg-gray-200 hover:bg-gray-300">Details</button>
             </div>
           </div>`;
@@ -109,7 +110,38 @@ const displayLikeDetail = (pet) => {
 };
 
 
+// Adopt button function 
 
+let countdownInterval; 
+
+// Function to open the modal and start the countdown
+const openModal = () => {
+  const modal = document.getElementById("countdown-modal");
+  modal.classList.remove("hidden");
+
+  // Initialize the countdown
+  let countdown = 5; 
+  const timerElement = document.getElementById("countdown-timer");
+  timerElement.textContent = countdown;
+
+  // Start the countdown
+  countdownInterval = setInterval(() => {
+    countdown--;
+    timerElement.textContent = countdown;
+
+    if (countdown <= 0) {
+      clearInterval(countdownInterval);
+      closeModal(); 
+    }
+  }, 1000);
+};
+
+// Function to close the modal and clear the countdown
+const closeModal = () => {
+  const modal = document.getElementById("countdown-modal");
+  modal.classList.add("hidden");
+  clearInterval(countdownInterval); 
+};
 
 
 
