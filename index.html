@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme = 'light'>
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <!-- DaisyUI -->
+        <link
+        href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+        rel="stylesheet"
+        type="text/css"
+    />
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome cdn -->
+    <script src="https://kit.fontawesome.com/8bcfb398b0.js" crossorigin="anonymous"></script>
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="./style/style.css" />
+</head>
+<body>
+    <!-- Header section  -->
+    <header class="w-11/12 mx-auto">
+        <nav class="flex justify-between items-center py-12">
+            <div class="flex justify-between items-center gap-4">
+                <img src="./images/logo.webp" alt="">
+                <h1>Peddy</h1>
+            </div>
+            <div class="flex justify-between items-center gap-7">
+                <p>Home</p>
+                <p>Shop</p>
+                <p>Contact</p>
+            </div>
+            <div>
+                <i class="fa-regular fa-user"></i>
+            </div>
+        </nav>
+
+        <!-- Hero section  -->
+        <section class="">
+            <div class="flex items-center justify-center min-h-screen">
+                <div class="text-center p-6  rounded-lg">
+                  <p class="text-sm text-gray-500 font-semibold tracking-wide mb-2">
+                    Bringing Families Together <span class="text-red-500">❤️</span>
+                  </p>
+                  <h1 class="text-3xl font-bold text-gray-900 mb-4">
+                    Your Path to Adoption Starts Here
+                  </h1>
+                  <p class="text-gray-600 mb-6">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                  </p>
+                  <button class="bg-teal-500 text-white px-6 py-2 rounded-full hover:bg-teal-600 transition">
+                    View More
+                  </button>
+                  <div class="mt-6">
+                    <img src="./images/pet.webp" alt="Dog and Cat" class="rounded-lg  mx-auto">
+                  </div>
+                </div>
+              </div>
+        </section> 
+    </header>
+    <!-- main section  -->
+    <main class="w-11/12 mx-auto py-12">
+        <section class=" flex flex-col justify-center text-center items-center">
+            <div class="  w-3/6">
+                <h1 class="text-3xl font-bold text-gray-900 mb-4">Adopt  Your  Best Friend</h1>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            </div>
+        </section>
+
+        <!-- category button section  -->
+        <section class="py-11">
+            <div id="category-button" class="flex gap-8 md:gap-32 justify-center items-center py-2">
+            </div>
+        </section> 
+
+        <!-- All pet data show header section  -->
+        <section class="py-11">
+            <div class="flex justify-between items-center ">
+                <h1 class="text-xl font-bold">Best Deal For you</h1>
+                <button class="btn bg-green-600 text-white">Sort by Price</button>
+            </div>
+        </section>
+        
+<!-- All pet data show section -->
+<section>
+    <div class="grid grid-cols-1 md:grid-cols-[70%_30%] gap-4">
+        <div id="data-card" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-1 border p-4">
+
+        </div>
+    </div>
+</section>
+
+
+    </main>
+    <!-- footer section   -->
+    <footer>
+
+    </footer> 
+    <script src="./js/category.js"></script>
+    <script src="./js/fullData.js"></script>
+</body>
+</html>
