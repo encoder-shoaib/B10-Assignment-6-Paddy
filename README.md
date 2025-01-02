@@ -26,4 +26,4 @@
 - **Icons**: Font Awesome for intuitive and modern icons  
 - **Responsive Design**: Media queries for optimal user experience across devices  
 
-## 📂 Project Structure  
+
