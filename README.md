@@ -18,8 +18,8 @@
 5. **Modules (if applicable)**: Encourages reusability and better code organization.  
 
 ## 🌐 Live Demo  
-👉 [Visit the Live Project](#)  
-(*Replace `#` with your actual live URL, e.g., GitHub Pages, Vercel, or Netlify.*)  
+👉 [ https://encoder-shoaib.github.io/B10-Assignment-6-Paddy/ ](#)  
+ 
 
 ## 🛠️ Technologies Used  
 - **Frontend**: HTML, CSS (with utility frameworks), JavaScript (ES6+)  
