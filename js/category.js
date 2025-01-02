@@ -19,10 +19,8 @@ const logCategoryPets = (category, id) => {
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
-
             
             removeActiveClass();
-
             
             const activeBtn = document.getElementById(`btn-${id}`);
             if (activeBtn) {
@@ -66,5 +64,7 @@ const displayCategoryData = (data) => {
         categoryBtnContainer.appendChild(btn);
     });
 };
+
+
 
 categoryDataLoad();
