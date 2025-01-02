@@ -72,16 +72,17 @@
         </section>
 
         <!-- category button section  -->
-        <section class="py-11">
-            <div id="category-button" class="flex gap-8 md:gap-32 justify-center items-center py-2">
+        <section class="py-6 md:py-11">
+              <div id="category-button" class="flex flex-wrap gap-4 md:gap-12 justify-center items-center py-2">
             </div>
-        </section> 
+        </section>
+ 
 
         <!-- All pet data show header section  -->
         <section class="py-11">
             <div class="flex justify-between items-center ">
                 <h1 class="text-xl font-bold">Best Deal For you</h1>
-                <button class="btn bg-green-600 text-white">Sort by Price</button>
+                <button id="short" class="btn bg-green-600 text-white">Sort by Price</button>
             </div>
         </section>
         
@@ -142,9 +143,61 @@
 
 
     </main>
-    <!-- footer section   -->
-    <footer>
 
+
+    <!-- footer section   -->
+    <footer class="bg-black text-white">
+      <section class="bg-black text-white py-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Left Section -->
+          <div>
+            <div class="flex gap-3">
+              <img class="w-8 h-8" src="./images/logo.webp" alt="">
+              <h2 class="text-xl font-bold mb-4">Peddy</h2>
+            </div>
+            <p>Location: 165, NY CA 54008</p>
+            <p>Phone: +88 16 946 47 25</p>
+            <p>Email: info@yourdomain.com</p>
+            <p>Opening Hours: 9:30 AM - 5:00 PM</p>
+            <div class="flex mt-4 space-x-4">
+              <a href="#" class="text-xl"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-xl"><i class="fab fa-x"></i></a>
+              <a href="#" class="text-xl"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="text-xl"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+    
+          <!-- Middle Section -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Useful Links</h3>
+            <ul>
+              <li class="mb-2"><a href="#" class="hover:underline">Home</a></li>
+              <li class="mb-2"><a href="#" class="hover:underline">About Us</a></li>
+              <li class="mb-2"><a href="#" class="hover:underline">Animals</a></li>
+              <li class="mb-2"><a href="#" class="hover:underline">Foundation</a></li>
+              <li><a href="#" class="hover:underline">Contact</a></li>
+            </ul>
+          </div>
+    
+          <!-- Right Section -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Drop a Message</h3>
+            <form action="#" method="POST">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="w-full p-2 mb-4 bg-gray-800 rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                class="w-full bg-teal-500 text-white py-2 rounded-lg hover:bg-teal-600"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </footer> 
     <script src="./js/category.js"></script>
     <script src="./js/fullData.js"></script>

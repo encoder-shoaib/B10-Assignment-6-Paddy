@@ -144,7 +144,16 @@ const closeModal = () => {
 };
 
 
-
+// sorting
+document.getElementById('short').addEventListener('click', () => {
+  fetch('https://openapi.programming-hero.com/api/peddy/pets')
+    .then(res => res.json())
+    .then(data => {
+      const sortedPets = data.pets.sort((a, b) => b.price - a.price); // Descending order by price
+      displayAllCategoryData(sortedPets); // Re-render pets after sorting
+    })
+    .catch(error => console.error("Error fetching pets data for sorting:", error));
+});
 
 
 allCategoryDataLoad()
