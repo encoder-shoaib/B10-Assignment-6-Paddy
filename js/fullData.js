@@ -15,7 +15,7 @@ const displayAllCategoryData = (pets) =>{
       AllPets.classList.remove("grid");
       AllPets.innerHTML = `
         <div class="min-h-[300px] flex flex-col gap-5 justify-center items-center">
-          <img src="../images/error.webp" />
+          <img src="/images/error.webp" />
           <h2 class="text-center text-xl font-bold">No Information Available</h2>
           <p class="w-4/6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at 
           its layout. The point of using Lorem Ipsum is that it has a.</p>
