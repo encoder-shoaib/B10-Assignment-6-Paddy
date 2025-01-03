@@ -52,7 +52,7 @@
                   <p class="text-gray-600 mb-6">
                     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                   </p>
-                  <button class="bg-teal-500 text-white px-6 py-2 rounded-full hover:bg-teal-600 transition">
+                  <button onclick="scrollToMainTopic()" class="bg-teal-500 text-white px-6 py-2 rounded-full hover:bg-teal-600 transition">
                     View More
                   </button>
                   <div class="mt-6">
@@ -87,7 +87,7 @@
         </section>
         
 <!-- All pet data show section -->
-<section>
+<section id="main-topic">
     <div class="grid grid-cols-1 md:grid-cols-[70%_30%] gap-4">
         <div id="data-card" class="grid grid-cols-1 md:grid-cols-3 gap-4">
             
@@ -142,6 +142,15 @@
   </div>
 
 
+  <section>
+    <div id="loading-spinner" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+      <span class="loading loading-dots loading-xs"></span>
+      <span class="loading loading-dots loading-sm"></span>
+      <span class="loading loading-dots loading-md"></span>
+      <span class="loading loading-dots loading-lg"></span>
+  </div>
+  
+  </section>
     </main>
 
 

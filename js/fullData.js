@@ -24,33 +24,46 @@ const displayAllCategoryData = (pets) =>{
       AllPets.classList.add("grid");
     }
 
-    pets.forEach((pet) => {
-        const card = document.createElement("div");
-        card.classList = "card card-compact border rounded-lg shadow-md p-4 w-full";
-    
-        card.innerHTML = `
-          <figure class="relative mb-4">
-            <img class="w-full h-48 object-cover rounded-t-lg" src="${pet.image}" alt="${pet.pet_name} Thumbnail" />
-          </figure>
-          <div class="">
-            <h2 class="text-lg font-bold mb-2">${pet.pet_name}</h2>
-            <p class="text-sm text-gray-500 ">Breed: ${pet.breed}</p>
-            <p class="text-sm text-gray-500">Birth: ${new Date(pet.date_of_birth).getFullYear()}</p>
-            <p class="text-sm text-gray-500">Gender: ${pet.gender}</p>
-            <p class="text-sm text-gray-500 mb-4">Price: $${pet.price}</p>
-            <div class="flex justify-between gap-4">
-              
-              <button onclick="lodeLikeData('${pet.petId}')"  class="btn px-4 py-2 text-cyan-700 bg-gray-200 hover:bg-gray-300">
-              <span class="w-7"><i class="fa-regular fa-thumbs-up"></i></span>
-              </button>
+pets.forEach((pet) => {
+    const card = document.createElement("div");
+    card.classList = "card card-compact border rounded-lg shadow-md p-4 w-full";
 
-              <button onclick="openModal()" class="btn  px-4 py-2 text-cyan-700 bg-gray-200 hover:bg-gray-300">Adopt</button>
-              <button onclick="lodeDetail('${pet.petId}')"  class="btn  px-4 py-2 text-cyan-700 bg-gray-200 hover:bg-gray-300">Details</button>
-            </div>
-          </div>`;
-    
-        allData.append(card);
-    });
+    card.innerHTML = `
+      <figure class="relative mb-4">
+        <img class="w-full h-48 object-cover rounded-t-lg" src="${pet.image ?? 'default-image.jpg'}" alt="${pet.pet_name ?? 'Unknown'} Thumbnail" />
+      </figure>
+      <div class="">
+        <h2 class="text-lg font-bold mb-2">${pet.pet_name ?? 'No Name Available'}</h2>
+
+        <div class="flex gap-2 mb-2">
+          <i class="fa-solid fa-bread-slice"></i>
+          <p class="text-sm text-gray-500 ">Breed: ${pet.breed ?? 'Unknown Breed'}</p>
+        </div>
+        <div class="flex gap-2 mb-2">
+          <i class="fa-solid fa-calendar-days"></i>
+          <p class="text-sm text-gray-500">Birth: ${pet.date_of_birth ? new Date(pet.date_of_birth).getFullYear() : 'Unknown'}</p>
+        </div>
+        <div class="flex gap-2 mb-2">
+          <i class="fa-solid fa-venus"></i>
+          <p class="text-sm text-gray-500">Gender: ${pet.gender ?? 'Unknown'}</p>
+        </div>
+        <div class="flex gap-2 ">
+          <i class="fa-solid fa-dollar-sign"></i>
+          <p class="text-sm text-gray-500 mb-4 mt-0">Price: $${pet.price ?? 'N/A'}</p>
+        </div>
+
+        <div class="flex justify-between gap-4">
+          <button onclick="lodeLikeData('${pet.petId ?? ''}')" class="btn px-4 py-2 text-cyan-700 bg-gray-200 hover:bg-gray-300">
+            <span class="w-7"><i class="fa-regular fa-thumbs-up"></i></span>
+          </button>
+          <button onclick="openModal()" class="btn px-4 py-2 text-cyan-700 bg-gray-200 hover:bg-gray-300">Adopt</button>
+          <button onclick="lodeDetail('${pet.petId ?? ''}')" class="btn px-4 py-2 text-cyan-700 bg-gray-200 hover:bg-gray-300">Details</button>
+        </div>
+      </div>`;
+
+    allData.append(card);
+});
+
     
     
 }
@@ -114,17 +127,14 @@ const displayLikeDetail = (pet) => {
 
 let countdownInterval; 
 
-// Function to open the modal and start the countdown
 const openModal = () => {
   const modal = document.getElementById("countdown-modal");
   modal.classList.remove("hidden");
 
-  // Initialize the countdown
   let countdown = 5; 
   const timerElement = document.getElementById("countdown-timer");
   timerElement.textContent = countdown;
 
-  // Start the countdown
   countdownInterval = setInterval(() => {
     countdown--;
     timerElement.textContent = countdown;
@@ -149,8 +159,8 @@ document.getElementById('short').addEventListener('click', () => {
   fetch('https://openapi.programming-hero.com/api/peddy/pets')
     .then(res => res.json())
     .then(data => {
-      const sortedPets = data.pets.sort((a, b) => b.price - a.price); // Descending order by price
-      displayAllCategoryData(sortedPets); // Re-render pets after sorting
+      const sortedPets = data.pets.sort((a, b) => b.price - a.price); 
+      displayAllCategoryData(sortedPets); 
     })
     .catch(error => console.error("Error fetching pets data for sorting:", error));
 });

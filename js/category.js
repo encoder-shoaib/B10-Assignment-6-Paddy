@@ -15,28 +15,35 @@ const removeActiveClass = () => {
 };
 
 const logCategoryPets = (category, id) => {
+
+    const spinner = document.getElementById('loading-spinner');
+    spinner.classList.remove('hidden'); // Show spinner
+
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
-            
-            removeActiveClass();
-            
-            const activeBtn = document.getElementById(`btn-${id}`);
-            if (activeBtn) {
-                activeBtn.classList.add('active');
-            } else {
-                console.error("Active button not found!");
-            }
+            setTimeout(() => {
+                spinner.classList.add('hidden'); 
+                console.log(data);
 
-            // Display the fetched category data
-            if (data.status && data.data) {
-                displayAllCategoryData(data.data);
-            } else {
-                console.error("Invalid data or status from the API.");
-            }
+                removeActiveClass();
+
+                const activeBtn = document.getElementById(`btn-${id}`);
+                if (activeBtn) {
+                    activeBtn.classList.add('active');
+                } else {
+                    console.error("Active button not found!");
+                }
+
+                if (data.status && data.data) {
+                    displayAllCategoryData(data.data);
+                } else {
+                    console.error("Invalid data or status from the API.");
+                }
+            }, 2000); 
         })
         .catch((error) => {
+            spinner.classList.add('hidden'); 
             console.error("Error fetching category data:", error);
         });
 };
@@ -64,6 +71,17 @@ const displayCategoryData = (data) => {
         categoryBtnContainer.appendChild(btn);
     });
 };
+
+// view button 
+const scrollToMainTopic = () => {
+    const mainTopic = document.getElementById('main-topic');
+    if (mainTopic) {
+      mainTopic.scrollIntoView({ behavior: 'smooth' }); // 
+    } else {
+      console.error("Main topic section not found!");
+    }
+  };
+  
 
 
 
